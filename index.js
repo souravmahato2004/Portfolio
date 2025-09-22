@@ -165,16 +165,18 @@ document.querySelectorAll('.footer-nav-link').forEach(link => {
   });
 });
 
-// Contact form handling
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  const formData = new FormData(e.target);
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  // 1. Prevent the default form submission
+  e.preventDefault(); 
+
+  const form = e.target;
+  const formData = new FormData(form);
   const name = formData.get('name');
   const email = formData.get('email');
   const subject = formData.get('subject');
   const message = formData.get('message');
-  
+
+  // 2. Perform your validation checks (this part is the same)
   if (!name || !email || !subject || !message) {
     alert('Please fill in all required fields.');
     return;
@@ -185,10 +187,27 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     alert('Please enter a valid email address.');
     return;
   }
-  
-  alert('Thank you for your message! I will get back to you soon.');
-  
-  e.target.reset();
+
+  // 3. Send the data to Formspree using fetch
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      // 4. If submission is successful, show message and reset
+      alert('Thank you for your message! I will get back to you soon.');
+      form.reset();
+    } else {
+      // 5. If there's an error, show an error message
+      alert('Oops! There was a problem submitting your form. Please try again.');
+    }
+  }).catch(error => {
+    // 6. Handle network errors
+    alert('Oops! There was a network error. Please try again.');
+  });
 });
 
 // Add scroll animations

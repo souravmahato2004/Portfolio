@@ -1,0 +1,737 @@
+:root {
+  --current:#754ef9;
+  --currentShade:#f0edfe;
+  --violet: #754ef9;
+  --vshade: #f0edfe;
+  --yellow: #FCCA07;
+  --yshade: #fffbec;
+  --orange: #FF6D38;
+  --oshade: #fff0eb;
+  --navy: #004B6A;
+  --nshade: #e5f7ff;
+  --pink: #E94D88;
+  --pshade: #ffe8f1;
+  --green: #45B164;
+  --gshade: #e7ffee;
+  
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --border-color: #e5e5e5;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #888888;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+.Outfit{
+    font-family:"outfit",sans-serif;
+}
+
+/* Theme-aware body styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme specific styles */
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .bg-\[\#F7F6FB\] {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .text-\[\#797979\] {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-\[\#767578\] {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .shadow-\[0px_10px_20px_var\(--currentShade\)\] {
+  box-shadow: 0px 10px 20px var(--shadow) !important;
+}
+
+/* Navigation button theme-aware colors and animations */
+.nav-link {
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--current), transparent);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.nav-link:hover {
+  color: var(--current);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme-aware navigation colors */
+[data-theme="dark"] .nav-link {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: var(--current);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Footer navigation animations */
+.footer-nav-link {
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.footer-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--current);
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.footer-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  height: 100%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.footer-nav-link:hover {
+  color: var(--current);
+}
+
+.footer-nav-link:hover::after {
+  width: 100%;
+}
+
+.footer-nav-link:hover::before {
+  width: 0;
+  left: -10px;
+}
+
+.footer-nav-link:active {
+  transform: none;
+}
+
+/* Footer link hover effect - no translate */
+.footer-nav-link:hover {
+  color: var(--current);
+}
+
+/* Skills section theme-aware colors */
+.skills-section-title {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.skills-card {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.skills-progress-bar {
+  background-color: var(--current);
+  transition: background-color 0.3s ease;
+}
+
+.skills-progress-bg {
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+/* Background blur effect based on theme */
+.header-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: backdrop-filter 0.3s ease;
+}
+
+[data-theme="dark"] .header-blur {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Additional skills theme-aware styling */
+.additional-skill-card {
+  background: linear-gradient(135deg, var(--current), var(--currentShade));
+  transition: all 0.3s ease;
+}
+
+.additional-skill-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px var(--currentShade);
+}
+
+/* Theme toggle button animations */
+#themeToggle {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#themeToggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#themeToggle:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+#themeToggle:active {
+  transform: scale(0.95);
+}
+
+#themeIcon {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+#themeToggle:hover #themeIcon {
+  transform: rotate(180deg);
+}
+
+/* Theme toggle pulse animation */
+@keyframes themeTogglePulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--current);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(117, 78, 249, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(117, 78, 249, 0);
+  }
+}
+
+#themeToggle:focus {
+  animation: themeTogglePulse 1.5s infinite;
+  outline: none;
+}
+
+/* Download CV button animation */
+.download-cv-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-cv-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.download-cv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--currentShade);
+}
+
+.download-cv-btn:hover::before {
+  left: 100%;
+}
+
+.download-cv-btn:active {
+  transform: translateY(0);
+}
+
+/* Service Modal Styles */
+#serviceModal {
+  transition: opacity 0.3s ease;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* Dark theme modal background */
+[data-theme="dark"] #serviceModal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#serviceModal.hidden {
+  display: none;
+}
+
+#serviceModal:not(.hidden) {
+  display: flex;
+}
+
+#serviceModal .bg-white {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  max-width: 90vw;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#serviceModal:not(.hidden) .bg-white {
+  transform: scale(1);
+}
+
+#closeModal {
+  transition: all 0.3s ease;
+}
+
+#closeModal:hover {
+  transform: scale(1.1);
+}
+
+/* Modal content animations */
+.modal-fade-in {
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prevent horizontal scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Ensure modal content doesn't overflow */
+#modalContent {
+  max-width: 100%;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
+/* Fix any potential overflow in modal content */
+#modalContent * {
+  max-width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* Fix grid layouts in modal */
+#modalContent .grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#modalContent .flex {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Theme-aware modal content styles */
+.modal-title {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.modal-text {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.modal-text-muted {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.modal-bg {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+.modal-card-bg {
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+.modal-border {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease;
+}
+
+/* Dark theme specific modal styles */
+[data-theme="dark"] #serviceModal .bg-white {
+  background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .modal-title {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .modal-text {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .modal-text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Responsive modal adjustments */
+@media (max-width: 768px) {
+  #serviceModal .bg-white {
+    max-width: 95vw;
+    margin: 1rem auto;
+  }
+  
+  #modalContent {
+    padding: 0;
+  }
+  
+  #modalContent .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #serviceModal .bg-white {
+    max-width: 98vw;
+    margin: 0.5rem auto;
+  }
+}
+.libertinus {
+  font-family: "Libertinus Math", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.tri {
+    position: relative;
+    top: 70px;
+    left: 30px;
+  --r:60px; /* border radius */
+
+  height: 500px;
+  aspect-ratio: 0.866; 
+  --_g:calc(tan(60deg)*var(--r)) left var(--r),#000 98%,#0000 101%;
+  mask:
+    conic-gradient(from 60deg at calc(3*var(--r)/2 - 100%),#000 60deg,#0000 0)
+    0 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+    radial-gradient(var(--r) at calc(100% - 2*var(--r)) 50%,#000 98%,#0000 101%),
+    radial-gradient(var(--r) at top     var(--_g)),
+    radial-gradient(var(--r) at bottom var(--_g));
+  -webkit-mask:
+    conic-gradient(from 60deg at calc(3*var(--r)/2 - 100%),#000 60deg,#0000 0)
+    0 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+    radial-gradient(var(--r) at calc(100% - 2*var(--r)) 50%,#000 98%,#0000 101%),
+    radial-gradient(var(--r) at top     var(--_g)),
+    radial-gradient(var(--r) at bottom var(--_g));
+  clip-path: polygon(100% 50%,0 100%,0 0);
+  background: black;
+  object-fit: cover;
+  object-position: -100px 40px;
+}
+.triBack {
+    position: absolute;
+  --r:30px; /* border radius */
+
+  height: 430px;
+  aspect-ratio: 0.866;
+  --_g:calc(tan(60deg)*var(--r)) left var(--r),#000 98%,#0000 101%;
+  mask:
+    conic-gradient(from 60deg at calc(3*var(--r)/2 - 100%),#000 60deg,#0000 0)
+    0 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+    radial-gradient(var(--r) at calc(100% - 2*var(--r)) 50%,#000 98%,#0000 101%),
+    radial-gradient(var(--r) at top     var(--_g)),
+    radial-gradient(var(--r) at bottom var(--_g));
+  -webkit-mask:
+    conic-gradient(from 60deg at calc(3*var(--r)/2 - 100%),#000 60deg,#0000 0)
+    0 0/calc(100% - 3*var(--r)/2) 100% no-repeat,
+    radial-gradient(var(--r) at calc(100% - 2*var(--r)) 50%,#000 98%,#0000 101%),
+    radial-gradient(var(--r) at top     var(--_g)),
+    radial-gradient(var(--r) at bottom var(--_g));
+  clip-path: polygon(100% 50%,0 100%,0 0);
+  background: var(--current);
+  object-fit: cover;
+  object-position: -100px 40px;
+}
+
+/* Services Section Enhancement */
+.service-card {
+  background-color: var(--bg-primary);
+  box-shadow: 0px 10px 30px var(--shadow);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--current);
+}
+.service-icon-wrapper {
+  border-color: var(--current);
+  transition: border-color 0.3s ease;
+}
+.service-icon {
+  color: var(--current);
+  transition: color 0.3s ease;
+}
+.service-title {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+.service-divider div {
+  background-color: var(--current);
+  transition: background-color 0.3s ease;
+}
+.service-description {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+.service-button {
+  color: white;
+  background-color: var(--current);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.service-card:hover .service-icon-wrapper {
+  border-color: white;
+}
+.service-card:hover .service-icon,
+.service-card:hover .service-title,
+.service-card:hover .service-description {
+  color: white;
+}
+.service-card:hover .service-divider div {
+  background-color: white;
+}
+.service-card:hover .service-button {
+  background-color: white;
+  color: var(--current);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    /* Adjust header layout for tablets */
+    .lg\:justify-center {
+        justify-content: space-between;
+    }
+    .lg\:gap-32 {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden; /* Prevent scrolling when mobile menu is open */
+    }
+    
+    /* Make the header height flexible to contain stacked content */
+    header.h-screen {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    /* Stack grids for all sections */
+    .grid-cols-3, .grid-cols-2, .lg\:grid-cols-2, .lg\:grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .w-3\/5, .w-4\/5, .w-1\/3 {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ml-20 {
+        margin-left: 0;
+    }
+
+    .pl-12 {
+        padding-left: 1rem;
+    }
+    
+    .text-4xl, .text-\[54px\] {
+        font-size: 2.25rem; /* 36px */
+        line-height: 2.5rem;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    /* --- Hero Section Fixes --- */
+    /* Target the hero section container to use flexbox */
+    header > section.relative {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem; /* Space between image and text */
+        padding: 5rem 1rem 4rem 1rem; /* Top, sides, bottom padding */
+    }
+    
+    /* Reset children to stack naturally within the new flex container */
+    .absolute.left-1\/5, .absolute.left-1\/2, .absolute.right-14 {
+        position: static; /* Let flexbox control the layout */
+        margin: 0;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .absolute.left-1\/5 {
+        pointer-events: auto;
+    }
+    
+    .tri {
+        height: 350px;
+        left: 0;
+        top: 35px;
+    }
+    .triBack {
+        height: 300px;
+    }
+
+    /* --- About Me Section Fixes --- */
+    #about .flex.justify-center {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        gap: 2rem;
+    }
+
+    #about img {
+        position: relative;
+        object-position: 0px 0px;
+        width: 300px;
+        height: 300px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-4xl, .text-\[54px\] {
+        font-size: 1.875rem; /* 30px */
+        line-height: 2.25rem;
+    }
+
+    .px-8 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .tri {
+      height: 280px;
+      top: 25px;
+    }
+    .triBack {
+      height: 240px;
+    }
+}
+
+/* --- NEW --- Fix for very narrow screens */
+@media (max-width: 400px) {
+    .tri {
+      height: 240px; /* Further reduce height */
+      --r: 40px; /* Reduce the corner radius for a sharper look */
+      top: 20px;
+      left: 10px; /* Adjust position */
+    }
+    .triBack {
+      height: 210px;
+      --r: 20px;
+    }
+}

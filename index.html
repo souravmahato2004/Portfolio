@@ -9,21 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Outfit:wght@100..900&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>    <link rel="stylesheet" href="index.css">
 </head>
 <body class="Outfit overflow-x-hidden">
-    <header class="h-screen w-screen">
-        <section>
-            <div class="flex h-screen absolute w-screen z-0">
-                <div class="bg-[#101010] w-2/6" id="particles-js"></div>
-                <div class="bg-[#F7F6FB] w-4/6"></div>
-            </div>
-        </section>
-    
-        <section class="flex justify-between items-center relative pt-6 px-4 md:px-8 lg:justify-center lg:gap-32 header-blur">
-            <div class="flex items-center gap-2 pointer-events-none z-50">
+    <header class="relative w-screen h-screen overflow-hidden">
+    <div class="absolute inset-0 flex z-0">
+        <div id="particles-js" class="w-full bg-[#101010] lg:w-2/5"></div>
+        <div class="hidden bg-[#F7F6FB] lg:block lg:w-3/5"></div>
+    </div>
+
+    <nav class="sticky top-0 z-40 px-4 py-3 md:px-8 ">
+        <div class="flex items-center justify-between max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 z-50">
                 <span class="w-8"><img src="assets/sBlue.png" alt="Logo"></span>
-                <span id="logo-text" class="text-white text-xl">Sourav.</span>
+                <span id="logo-text" class="text-white text-xl font-bold">Sourav.</span>
             </div>
-        
-            <div class="hidden lg:flex space-x-4">
+
+            <div class="hidden lg:flex items-center gap-2">
                 <button class="nav-link" data-section="home">Home</button>
                 <button class="nav-link" data-section="about">About</button>
                 <button class="nav-link" data-section="services">Services</button>
@@ -33,19 +32,27 @@
                 <button class="nav-link" data-section="education">Education</button>
                 <button class="nav-link" data-section="contact">Contact</button>
             </div>
-        
+
             <div class="flex items-center gap-4">
                 <button id="themeToggle" class="w-10 h-10 bg-[var(--current)] rounded-full flex items-center justify-center text-white hover:bg-opacity-80 transition-all duration-300">
                     <i id="themeIcon" class="ri-sun-line text-lg"></i>
                 </button>
-                <button class="hidden md:block bg-[var(--current)] px-8 py-2 rounded-full text-white download-cv-btn">Download CV</button>
+                <button class="hidden md:block bg-[var(--current)] px-6 py-2 rounded-full text-white download-cv-btn hover:opacity-80 transition-opacity">Download CV</button>
+                
                 <button id="menu-toggle" class="lg:hidden text-white z-50 text-2xl">
                     <i class="ri-menu-line"></i>
                 </button>
             </div>
-        </section>
-    
-        <div id="mobile-menu" class="hidden fixed inset-0 bg-[#101010] z-40 flex flex-col items-center justify-center gap-6">
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full max-w-xs bg-[#181818] z-[60] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="flex justify-end p-4">
+            <button id="menu-close" class="text-white text-3xl">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center h-full gap-6 -mt-16">
             <button class="nav-link text-2xl text-white" data-section="home">Home</button>
             <button class="nav-link text-2xl text-white" data-section="about">About</button>
             <button class="nav-link text-2xl text-white" data-section="services">Services</button>
@@ -54,51 +61,62 @@
             <button class="nav-link text-2xl text-white" data-section="experience">Experience</button>
             <button class="nav-link text-2xl text-white" data-section="education">Education</button>
             <button class="nav-link text-2xl text-white" data-section="contact">Contact</button>
+            <button class="mt-8 bg-[var(--current)] px-8 py-3 rounded-full text-white download-cv-btn">Download CV</button>
         </div>
-        
-        <div class="fixed right-0 overflow-hidden h-44 z-50 top-16">
-            <button id="toggleColor" class="text-[16px] text-white bg-[var(--current)] py-1 pr-6 pl-2 border-none rounded-full relative translate-x-[160px] flex items-center transition-all duration-300">
-                <i class="ri-settings-4-fill text-[24px] text-white pl-1"></i>| CHOOSE A COLOR</button>
-            <div id="colorPanel" class="relative translate-x-[210px] bg-white p-3 border-none rounded-[12px] shadow-lg transition-all duration-300 delay-200">
-                <p>Color</p>
-                <div class="grid grid-cols-3 grid-rows-2 gap-2 w-fit text-[0px]">
-                    <div class="bg-[var(--violet)] w-8 h-8 border-none rounded-full">--violet</div>
-                    <div class="bg-[var(--yellow)] w-8 h-8 border-none rounded-full">--yellow</div>
-                    <div class="bg-[var(--orange)] w-8 h-8 border-none rounded-full">--orange</div>
-                    <div class="bg-[var(--navy)] w-8 h-8 border-none rounded-full">--navy</div>
-                    <div class="bg-[var(--pink)] w-8 h-8 border-none rounded-full">--pink</div>
-                    <div class="bg-[var(--green)] w-8 h-8 border-none rounded-full">--green</div>
-                </div>
+    </div>
+    <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-50 hidden lg:hidden"></div>
+
+
+    <main class="relative z-10 flex flex-grow items-center px-4 md:px-8">
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 min-[850px]:grid-cols-2 items-center gap-8 md:gap-12">
+
+        <div class="flex justify-center min-[850px]:justify-end">
+            <div class="relative w-full max-w-[280px] sm:max-w-[450px] aspect-square pointer-events-none mx-auto min-[850px]:mx-0">
+                <div class="triBack absolute inset-0 transition-all duration-300 delay-50"></div>
+                <img src="assets/myImg.png" alt="myImage" class="tri absolute inset-0">
             </div>
         </div>
-        <section class="relative">
-            <div class="absolute left-1/5 top-10 pointer-events-none">
-                <div class="triBack transition-all duration-300 delay-50"></div>
-                <img src="assets/myImg.png" alt="myImage" class="tri">
+
+        <div class="text-center min-[850px]:text-left">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-grey-300">
+                I'm <span id="typing-text" class="text-[var(--current)]"></span><span class="animate-ping">_</span>
+            </h1>
+
+            <p class="text-gray-400 mt-4 max-w-md mx-auto min-[850px]:mx-0">Passionate web developer creating stunning and functional websites. Let's build something amazing together.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center min-[850px]:justify-start">
+                
+                <button id="get-started-btn" class="border-2 border-[var(--current)] px-8 py-3 rounded-full text-grey-400 hover:bg-[var(--current)] transition-all duration-300">Get Started</button>
+                <button id="view-portfolio-btn" class="bg-[var(--current)] px-8 py-3 rounded-full text-white hover:bg-opacity-80 transition-all duration-300">View Portfolio</button>
             </div>
-            <div class="absolute left-1/2 top-58">
-                <div class="h-46">
-                    <div class="text-[54px] font-bold text-[#E1E0E5]">I'm</div>
-                    <div class="text-[54px] font-bold whitespace-nowrap overflow-hidden flex">
-                        <div id="typing-text" class="inline"></div>
-                        <div>_</div>
-                    </div>
-                </div>
-                <div class="flex space-x-2">
-                    <button id="get-started-btn" class="border border-[#767578] px-8 py-2 rounded-full text-[#767578] hover:bg-[var(--current)] hover:text-white hover:border-[var(--current)] transition-all duration-300 cursor-pointer">Get Started</button>
-                    <button id="view-portfolio-btn" class="bg-[var(--current)] px-8 py-2 rounded-full text-white transition-all duration-300 delay-50 hover:bg-opacity-80 cursor-pointer">View Portfolio</button>
-                </div>
+
+            <div class="flex items-center justify-center min-[850px]:justify-start gap-4 mt-12">
+                <span class="text-sm text-[var(--current)] font-medium">FOLLOW ME:</span>
+                <a href="https://www.linkedin.com/in/sourav-mahato121" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-linkedin-box-fill"></i></a>
+                <a href="https://github.com/souravmahato2004" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-github-fill"></i></a>
+                <a href="https://x.com/souravmahato121" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-twitter-x-line"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-instagram-line"></i></a>
             </div>
-            <div class="absolute right-14 top-[80vh] text-[24px] flex items-center transition-all duration-300 delay-50">
-                <span class="text-[16px] text-[var(--current)]">FOLLOW ME ON:-</span>
-                <span><a href="https://www.linkedin.com/in/sourav-mahato121" target="_blank"><i class="ri-linkedin-box-fill text-[var(--current)]"></i></a></span>
-                <span><a href="https://github.com/souravmahato2004" target="_blank"><i class="ri-github-fill text-[var(--current)]"></i></a></span>
-                <span><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill text-[var(--current)]"></i></a></span>
-                <span><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line text-[var(--current)]"></i></a></span>
-                <span><a href="https://x.com/souravmahato121" target="_blank"><i class="ri-twitter-x-line text-[var(--current)]"></i></a></span>
+        </div>
+    </div>
+</main>
+
+    <div class="fixed right-0 overflow-hidden h-144 z-50 top-24">
+        <button id="toggleColor" class="text-[16px] text-white bg-[var(--current)] py-1 pr-6 pl-2 border-none rounded-full relative translate-x-[160px] flex items-center transition-all duration-300">
+            <i class="ri-settings-4-fill text-[24px] text-white pl-1"></i>| CHOOSE A COLOR</button>
+        <div id="colorPanel" class="relative translate-x-[210px] bg-white p-3 border-none rounded-[12px] shadow-lg transition-all duration-300 delay-200">
+            <p>Color</p>
+            <div class="grid grid-cols-3 grid-rows-2 gap-2 w-fit text-[0px]">
+                <div class="bg-[var(--violet)] w-8 h-8 border-none rounded-full">--violet</div>
+                <div class="bg-[var(--yellow)] w-8 h-8 border-none rounded-full">--yellow</div>
+                <div class="bg-[var(--orange)] w-8 h-8 border-none rounded-full">--orange</div>
+                <div class="bg-[var(--navy)] w-8 h-8 border-none rounded-full">--navy</div>
+                <div class="bg-[var(--pink)] w-8 h-8 border-none rounded-full">--pink</div>
+                <div class="bg-[var(--green)] w-8 h-8 border-none rounded-full">--green</div>
             </div>
-        </section>
-    </header>
+        </div>
+    </div>
+</header>
 
     <section id="about" class=" w-screen mb-20">
         <div class="flex justify-center mt-26">

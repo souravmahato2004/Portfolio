@@ -1,33 +1,50 @@
 // --- Mobile Menu Toggle ---
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = mobileMenu.querySelectorAll('.nav-link');
-const logoText = document.getElementById('logo-text');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const navLinks = mobileMenu.querySelectorAll('.nav-link');
 
-menuToggle.addEventListener('click', () => {
-    // Toggle the 'hidden' class on the menu
-    mobileMenu.classList.toggle('hidden');
+    const openMenu = () => {
+        if (mobileMenu && menuOverlay) {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            menuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevents background scroll
+        }
+    };
 
-    // Toggle the icon between menu and close
-    const icon = menuToggle.querySelector('i');
-    if (mobileMenu.classList.contains('hidden')) {
-        icon.className = 'ri-menu-line';
-        document.body.classList.remove('menu-open');
-        logoText.classList.remove('text-[var(--current)]'); // Revert logo color
-    } else {
-        icon.className = 'ri-close-line';
-        document.body.classList.add('menu-open');
-        logoText.classList.add('text-[var(--current)]'); // Highlight logo
+    const closeMenu = () => {
+        if (mobileMenu && menuOverlay) {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            menuOverlay.classList.add('hidden');
+            document.body.style.overflow = ''; // Restores background scroll
+        }
+    };
+
+    // Event listener for the hamburger icon
+    if (menuToggle) {
+        menuToggle.addEventListener('click', openMenu);
     }
-});
 
-// Close menu when a nav link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuToggle.querySelector('i').className = 'ri-menu-line';
-        document.body.classList.remove('menu-open');
-        logoText.classList.remove('text-[var(--current)]');
+    // Event listener for the close button inside the menu
+    if (menuClose) {
+        menuClose.addEventListener('click', closeMenu);
+    }
+
+    // Event listener to close menu when clicking the overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+
+    // Add event listeners to each nav link to close the menu on click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+            // Your original scroll-to-section logic will still work here
+        });
     });
 });
 

@@ -317,10 +317,11 @@ document.querySelectorAll('button').forEach(btn => {
   }
 });
 
-// Service Modal functionality
+// --- Service Modal Functionality ---
 const serviceModal = document.getElementById('serviceModal');
 const modalContent = document.getElementById('modalContent');
-const closeModal = document.getElementById('closeModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const serviceButtons = document.querySelectorAll('.service-button');
 
 // Service data for modals
 const serviceData = {
@@ -496,71 +497,70 @@ const serviceData = {
   }
 };
 
-// Open modal function
-function openModal(serviceType) {
-  const service = serviceData[serviceType];
-  if (service) {
-    // Store current scroll position
-    const scrollY = window.scrollY;
-    
-    modalContent.innerHTML = `
-      <div class="modal-fade-in">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-16 h-16 bg-[var(--current)] rounded-full flex items-center justify-center">
-            <i class="${service.icon} text-2xl text-white"></i>
-          </div>
-          <h2 class="text-3xl font-bold modal-title">${service.title}</h2>
-        </div>
-        ${service.details}
-      </div>
-    `;
-    serviceModal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = '100%';
-  }
-}
+let savedScrollY; // Variable to store scroll position
 
-// Close modal function
-function closeModalFunc() {
-  // Get the scroll position that was stored
-  const scrollY = document.body.style.top;
-  
+// --- Open Modal Function ---
+const openModal = (serviceType) => {
+  const service = serviceData[serviceType];
+  if (!service) return;
+
+  // Save the current scroll position
+  savedScrollY = window.scrollY;
+
+  // Populate the modal content
+  modalContent.innerHTML = `
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-16 h-16 bg-[var(--current)] rounded-full flex items-center justify-center flex-shrink-0">
+        <i class="${service.icon} text-3xl text-white"></i>
+      </div>
+      <h2 class="text-3xl font-bold modal-title">${service.title}</h2>
+    </div>
+    ${service.details}
+  `;
+
+  // Show the modal and lock background scroll
+  serviceModal.classList.remove('hidden');
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.width = '100%';
+};
+
+// --- Close Modal Function ---
+const closeModal = () => {
+  // Hide the modal and unlock background scroll
   serviceModal.classList.add('hidden');
-  document.body.classList.remove('modal-open');
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.width = '';
-  document.body.style.overflow = '';
-  
-  // Restore scroll position
-  window.scrollTo(0, parseInt(scrollY || '0') * -1);
-}
 
-// Event listeners for service buttons
-document.querySelectorAll('[data-service]').forEach(button => {
-  button.addEventListener('click', () => {
-    const serviceType = button.getAttribute('data-service');
+  // Restore the scroll position
+  window.scrollTo(0, savedScrollY);
+};
+
+// --- Event Listeners ---
+
+// Add a click listener to EACH "Read More" button
+serviceButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const serviceType = e.currentTarget.dataset.service;
     openModal(serviceType);
   });
 });
 
-// Close modal event listeners
-closeModal.addEventListener('click', closeModalFunc);
-serviceModal.addEventListener('click', (e) => {
-  if (e.target === serviceModal) {
-    closeModalFunc();
-  }
-});
+// Listener for the close button
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', closeModal);
+}
 
-// Escape key to close modal
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && !serviceModal.classList.contains('hidden')) {
-    closeModalFunc();
-  }
-});
+// Listener to close the modal by clicking the overlay
+if (serviceModal) {
+  serviceModal.addEventListener('click', (e) => {
+    // Check if the click was on the dark overlay itself
+    if (e.target === serviceModal) {
+      closeModal();
+    }
+  });
+}
 
 // View Portfolio button functionality
 document.getElementById('view-portfolio-btn').addEventListener('click', () => {

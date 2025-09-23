@@ -68,28 +68,28 @@
 
 
     <main class="relative z-10 flex flex-grow items-center px-4 md:px-8">
-    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 min-[850px]:grid-cols-2 items-center gap-8 md:gap-12">
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 md:gap-12">
 
-        <div class="flex justify-center min-[850px]:justify-end">
-            <div class="relative w-full max-w-[280px] sm:max-w-[450px] aspect-square pointer-events-none mx-auto min-[850px]:mx-0">
+        <div class="flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-[280px] sm:max-w-[450px] aspect-square pointer-events-none mx-auto lg:mx-0">
                 <div class="triBack absolute inset-0 transition-all duration-300 delay-50"></div>
                 <img src="assets/myImg.png" alt="myImage" class="tri absolute inset-0">
             </div>
         </div>
 
-        <div class="text-center min-[850px]:text-left">
+        <div class="text-center lg:text-left">
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-grey-300">
                 I'm <span id="typing-text" class="text-[var(--current)]"></span><span class="animate-ping">_</span>
             </h1>
 
-            <p class="text-gray-400 mt-4 max-w-md mx-auto min-[850px]:mx-0">Passionate web developer creating stunning and functional websites. Let's build something amazing together.</p>
+            <p class="text-gray-400 mt-4 max-w-md mx-auto lg:mx-0">Passionate web developer creating stunning and functional websites. Let's build something amazing together.</p>
             
-            <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center min-[850px]:justify-start">
+            <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
                 <button id="get-started-btn" data-mobile-scroll="about" class="border-2 border-[var(--current)] px-8 py-3 rounded-full text-gray-400 hover:bg-[var(--current)] transition-all duration-300">Get Started</button>
                 <button id="view-portfolio-btn" data-mobile-scroll="portfolio" class="bg-[var(--current)] px-8 py-3 rounded-full text-white hover:bg-opacity-80 transition-all duration-300">View Portfolio</button>
             </div>
 
-            <div class="flex items-center justify-center min-[850px]:justify-start gap-4 mt-12">
+            <div class="flex items-center justify-center lg:justify-start gap-4 mt-12">
                 <span class="text-sm text-[var(--current)] font-medium">FOLLOW ME:</span>
                 <a href="https://www.linkedin.com/in/sourav-mahato121" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-linkedin-box-fill"></i></a>
                 <a href="https://github.com/souravmahato2004" target="_blank" class="text-2xl text-gray-400 hover:text-[var(--current)] transition-colors"><i class="ri-github-fill"></i></a>
@@ -789,19 +789,15 @@
         </div>
     </footer>
 
-    <!-- Service Modal -->
-    <div id="serviceModal" class="hidden">
-        <div class="bg-white rounded-[20px] w-full max-h-[90vh] overflow-y-auto relative">
-            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl z-10">
-                <i class="ri-close-line"></i>
-            </button>
-            <div class="p-8">
-                <div id="modalContent">
-                    <!-- Content will be dynamically inserted here -->
-                </div>
-            </div>
-        </div>
+    <div id="serviceModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60 backdrop-blur-sm hidden">
+    <div id="modalContainer" class="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-2xl shadow-xl overflow-y-auto">
+        <div id="modalContent" class="p-8 md:p-12"></div>
+        
+        <button id="closeModalBtn" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-gray-800 transition-colors">
+            <i class="ri-close-line"></i>
+        </button>
     </div>
+</div>
 
     <script src="index.js"></script>
     <script src="particles.js"></script>

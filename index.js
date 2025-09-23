@@ -496,6 +496,8 @@ const serviceData = {
   }
 };
 
+
+
 // Open modal function
 function openModal(serviceType) {
   const service = serviceData[serviceType];

@@ -430,71 +430,67 @@ const serviceData = {
       </div>
     `
   },
-  'app-development': {
-    title: 'App Development',
-    icon: 'ri-smartphone-line',
-    description: 'Building fast, scalable, and secure mobile applications for both iOS and Android platforms, ensuring a seamless experience from start to finish.',
+  'data-science': {
+    title: 'Data Science',
+    icon: 'ri-bar-chart-line',
+    description: 'Analyzing and interpreting data to extract insights, build predictive models, and support informed decision-making using modern data science tools and techniques.',
     details: `
-      <h3 class="text-2xl font-bold mb-4 modal-title">Mobile App Development</h3>
-      <p class="modal-text mb-6">I develop native and cross-platform mobile applications that provide excellent user experiences while maintaining high performance and security standards.</p>
+      <h3 class="text-2xl font-bold mb-4 modal-title">Data Science</h3>
+      <p class="modal-text mb-6">As a beginner in data science, I work on projects involving data cleaning, visualization, and basic predictive modeling to gain hands-on experience and build practical skills.</p>
       
       <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Development Approach:</h4>
+        <h4 class="text-lg font-semibold mb-3 modal-title">Approach to Learning & Projects:</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="modal-card-bg p-4 rounded-lg">
-            <h5 class="font-semibold mb-2 modal-title">Cross-Platform Development</h5>
-            <p class="text-sm modal-text">Using React Native and Flutter to build apps that work on both iOS and Android with a single codebase.</p>
+            <h5 class="font-semibold mb-2 modal-title">Data Analysis</h5>
+            <p class="text-sm modal-text">Exploring and visualizing datasets to identify trends, patterns, and insights using Python libraries like Pandas and Matplotlib.</p>
           </div>
           <div class="modal-card-bg p-4 rounded-lg">
-            <h5 class="font-semibold mb-2 modal-title">Native Development</h5>
-            <p class="text-sm modal-text">Building platform-specific apps using Swift (iOS) and Kotlin (Android) for optimal performance.</p>
+            <h5 class="font-semibold mb-2 modal-title">Machine Learning</h5>
+            <p class="text-sm modal-text">Building simple predictive models using scikit-learn and experimenting with basic algorithms like regression and classification.</p>
           </div>
         </div>
       </div>
       
       <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Key Features I Implement:</h4>
-        <div class="grid grid-cols-2 gap-3">
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">User Authentication</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">Push Notifications</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">Offline Functionality</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">Real-time Updates</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">Payment Integration</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <i class="ri-check-line text-[var(--current)]"></i>
-            <span class="modal-text">Data Synchronization</span>
-          </div>
-        </div>
-      </div>
+  <h4 class="text-lg font-semibold mb-3 modal-title">Key Skills I’m Developing:</h4>
+  <div class="flex flex-wrap gap-3">
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Data Cleaning & Preprocessing
+    </span>
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Data Visualization
+    </span>
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Exploratory Data Analysis (EDA)
+    </span>
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Basic Machine Learning Models
+    </span>
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Python Programming
+    </span>
+    <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">
+      <i class="ri-check-line"></i> Data-driven Problem Solving
+    </span>
+  </div>
+</div>
+
       
       <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Technologies:</h4>
+        <h4 class="text-lg font-semibold mb-3 modal-title">Technologies & Tools:</h4>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">React Native</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Flutter</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Swift</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Kotlin</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Firebase</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Redux</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Python</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Pandas</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">NumPy</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Matplotlib</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Seaborn</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">scikit-learn</span>
+          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Jupyter Notebook</span>
         </div>
       </div>
     `
-  }
+}
 };
 
 let savedScrollY; // Variable to store scroll position

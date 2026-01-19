@@ -735,3 +735,21 @@ body.modal-open {
       --r: 20px;
     }
 }
+
+/* Ensure particles canvas fills its container and is positioned correctly */
+#particles-js {
+  position: relative;
+  overflow: hidden;
+}
+#particles-js canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  z-index: 0;
+  pointer-events: auto; /* allow particle interactivity */
+}
+
+/* If decorative elements should not block particles hover, add pointer-events:none to them.
+   e.g. .tri-wrapper { pointer-events: none; } */

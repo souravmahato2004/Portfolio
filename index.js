@@ -312,15 +312,18 @@ function updateModalTheme() {
 }
 
 // Download CV button functionality
-document.querySelectorAll("button").forEach((btn) => {
-  if (btn.textContent.includes("Download CV")) {
-    btn.addEventListener("click", () => {
-      const link = document.createElement("a");
-      link.href = "assets/B230032CS.pdf"; // Replace with your actual CV file path
-      link.download = "Sourav_Mahato_CV.pdf";
-      link.click();
+const cvButtons = document.querySelectorAll('.download-cv-btn');
+
+cvButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = 'assets/B230032CS.pdf'; 
+        
+        link.download = 'Sourav_Mahato_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
-  }
 });
 
 // --- Service Modal Functionality ---

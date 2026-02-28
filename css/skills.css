@@ -1,0 +1,75 @@
+/* ============================================================
+   css/skills.css
+   Skills section — cards, progress bars, additional skill pills
+   ============================================================ */
+
+.skills-section-title {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.skills-card {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.skills-progress-bar {
+    background-color: var(--current);
+    transition: background-color 0.3s ease;
+}
+
+.skills-progress-bg {
+    background-color: var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+/* Additional skills pills */
+.additional-skill-card {
+    background: linear-gradient(135deg, var(--current), var(--currentShade));
+    transition: all 0.3s ease;
+}
+
+.additional-skill-card:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px var(--currentShade);
+}
+
+/* ---- Tab buttons ---- */
+.skill-tab {
+    color: var(--current);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.skill-tab:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.active-skill-tab {
+    background: var(--current) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 14px var(--currentShade);
+}
+
+/* ---- Slider track ---- */
+.skills-slider-track {
+    width: 100%;
+    overflow: hidden;
+}
+
+#skills-panels-row {
+    display: flex;
+    will-change: transform;
+}
+
+.skill-panel {
+    min-width: 100%;
+    flex-shrink: 0;
+}

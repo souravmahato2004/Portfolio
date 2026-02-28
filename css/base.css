@@ -1,0 +1,63 @@
+/* ============================================================
+   css/base.css
+   Global resets, body styles, font utilities, dark-theme
+   blanket overrides for bg-white / text colors
+   ============================================================ */
+
+.Outfit {
+    font-family: "outfit", sans-serif;
+}
+
+.libertinus {
+    font-family: "Libertinus Math", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Theme-aware body */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-primary);
+}
+
+/* Dark theme blanket color patches */
+[data-theme="dark"] .bg-\[\#F7F6FB\] {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .text-\[\#797979\] {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-\[\#767578\] {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .border-gray-300 {
+    border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .shadow-\[0px_10px_20px_var\(--currentShade\)\] {
+    box-shadow: 0px 10px 20px var(--shadow) !important;
+}
+
+/* Header blur utility */
+.header-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: backdrop-filter 0.3s ease;
+}
+
+[data-theme="dark"] .header-blur {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}

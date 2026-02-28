@@ -1,0 +1,42 @@
+/* ============================================================
+   css/variables.css
+   CSS custom properties — theme colors, shades, and design tokens
+   ============================================================ */
+
+:root {
+    /* Accent colors */
+    --current: #754ef9;
+    --currentShade: #f0edfe;
+    --violet: #754ef9;
+    --vshade: #f0edfe;
+    --yellow: #FCCA07;
+    --yshade: #fffbec;
+    --orange: #FF6D38;
+    --oshade: #fff0eb;
+    --navy: #004B6A;
+    --nshade: #e5f7ff;
+    --pink: #E94D88;
+    --pshade: #ffe8f1;
+    --green: #45B164;
+    --gshade: #e7ffee;
+
+    /* Light theme semantic tokens */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border-color: #e5e5e5;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+    --border-color: #404040;
+    --shadow: rgba(0, 0, 0, 0.3);
+}

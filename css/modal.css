@@ -1,0 +1,150 @@
+/* ============================================================
+   css/modal.css
+   Service modal overlay, container, content theming,
+   and modal fade-in animation
+   ============================================================ */
+
+/* ---- Overlay ---- */
+#serviceModal {
+    transition: opacity 0.3s ease;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+[data-theme="dark"] #serviceModal {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#serviceModal.hidden {
+    display: none;
+}
+
+#serviceModal:not(.hidden) {
+    display: flex;
+}
+
+/* ---- Container ---- */
+#serviceModal .bg-white {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    max-width: 90vw;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#serviceModal:not(.hidden) .bg-white {
+    transform: scale(1);
+}
+
+/* ---- Close button ---- */
+#closeModal {
+    transition: all 0.3s ease;
+}
+
+#closeModal:hover {
+    transform: scale(1.1);
+}
+
+/* ---- Fade-in animation ---- */
+.modal-fade-in {
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Prevent horizontal overflow ---- */
+body.modal-open {
+    overflow: hidden;
+}
+
+#modalContent {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+#modalContent * {
+    max-width: 100%;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+#modalContent .grid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#modalContent .flex {
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+/* ---- Theme-aware modal content classes ---- */
+.modal-title {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.modal-text {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.modal-text-muted {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.modal-bg {
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease;
+}
+
+.modal-card-bg {
+    background-color: var(--bg-secondary);
+    transition: background-color 0.3s ease;
+}
+
+.modal-border {
+    border-color: var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+/* ---- Dark theme modal overrides ---- */
+[data-theme="dark"] #serviceModal .bg-white {
+    background-color: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .modal-title {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .modal-text {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .modal-text-muted {
+    color: var(--text-muted) !important;
+}

@@ -1,0 +1,67 @@
+/* ============================================================
+   css/services.css
+   Service cards — hover flip effect, icon/title/divider/button
+   colour transitions
+   ============================================================ */
+
+.service-card {
+    background-color: var(--bg-primary);
+    box-shadow: 0px 10px 30px var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background-color: var(--current);
+}
+
+.service-icon-wrapper {
+    border-color: var(--current);
+    transition: border-color 0.3s ease;
+}
+
+.service-icon {
+    color: var(--current);
+    transition: color 0.3s ease;
+}
+
+.service-title {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.service-divider div {
+    background-color: var(--current);
+    transition: background-color 0.3s ease;
+}
+
+.service-description {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.service-button {
+    color: white;
+    background-color: var(--current);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover state overrides */
+.service-card:hover .service-icon-wrapper {
+    border-color: white;
+}
+
+.service-card:hover .service-icon,
+.service-card:hover .service-title,
+.service-card:hover .service-description {
+    color: white;
+}
+
+.service-card:hover .service-divider div {
+    background-color: white;
+}
+
+.service-card:hover .service-button {
+    background-color: white;
+    color: var(--current);
+}

@@ -1,0 +1,500 @@
+<!-- ===== SKILLS SECTION COMPONENT ===== -->
+<section id="skills" class="flex flex-col items-center mb-20">
+    <div class="bg-[var(--currentShade)] text-[var(--current)] w-fit px-8 py-2 rounded-full">MY SKILLS</div>
+    <div class="font-medium text-4xl my-6">Technical Skills &amp; Expertise</div>
+
+    <!-- Programming Languages -->
+    <div class="w-4/5 mt-12">
+        <h3 class="text-2xl font-bold text-center mb-8 skills-section-title">Programming Languages</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div
+                class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)] text-center group hover:shadow-[0px_20px_50px_var(--currentShade)] transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-code-s-slash-line text-2xl text-white"></i>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">JavaScript</h4>
+                <p class="text-sm text-gray-600">Advanced</p>
+            </div>
+            <div
+                class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)] text-center group hover:shadow-[0px_20px_50px_var(--currentShade)] transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-code-s-slash-line text-2xl text-white"></i>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Python</h4>
+                <p class="text-sm text-gray-600">Intermediate</p>
+            </div>
+            <div
+                class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)] text-center group hover:shadow-[0px_20px_50px_var(--currentShade)] transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-code-s-slash-line text-2xl text-white"></i>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">Java</h4>
+                <p class="text-sm text-gray-600">Intermediate</p>
+            </div>
+            <div
+                class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)] text-center group hover:shadow-[0px_20px_50px_var(--currentShade)] transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <i class="ri-code-s-slash-line text-2xl text-white"></i>
+                </div>
+                <h4 class="font-semibold text-lg mb-2">C/C++</h4>
+                <p class="text-sm text-gray-600">Advanced</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TABBED SKILLS PANEL ===== -->
+    <div class="w-4/5 mt-16">
+        <h3 class="text-2xl font-bold text-center mb-8 skills-section-title">Domain Skills</h3>
+
+        <!-- Tab buttons -->
+        <div class="flex justify-center mb-10">
+            <div class="flex bg-[var(--currentShade)] p-1.5 rounded-full gap-1">
+                <button id="skill-tab-webdev"
+                    class="skill-tab active-skill-tab px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+                    data-panel="skill-panel-webdev">
+                    <i class="ri-code-s-slash-line mr-1.5"></i>Web Dev
+                </button>
+                <button id="skill-tab-aiml"
+                    class="skill-tab px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+                    data-panel="skill-panel-aiml">
+                    <i class="ri-brain-line mr-1.5"></i>AI / ML
+                </button>
+                <button id="skill-tab-ds"
+                    class="skill-tab px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300"
+                    data-panel="skill-panel-ds">
+                    <i class="ri-bar-chart-line mr-1.5"></i>Data Science
+                </button>
+            </div>
+        </div>
+
+        <!-- Slider track -->
+        <div class="skills-slider-track overflow-hidden">
+            <div id="skills-panels-row" class="flex transition-transform duration-500 ease-in-out">
+
+                <!-- ── PANEL 1: Web Development ── -->
+                <div id="skill-panel-webdev" class="skill-panel min-w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Frontend -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-palette-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Frontend</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">React.js</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:90%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">HTML5/CSS3</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:95%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">JavaScript</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:88%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Tailwind CSS</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Bootstrap</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Backend -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-server-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Backend</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Node.js</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Express.js</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">PHP</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">REST APIs</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:82%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">FastAPI</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Database & Tools -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-database-2-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Database &amp; Tools</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">MongoDB</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">MySQL</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Git/GitHub</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:90%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">PostgreSQL</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">AWS</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:45%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PANEL 2: AI / ML ── -->
+                <div id="skill-panel-aiml" class="skill-panel min-w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Core ML -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-violet-400 to-violet-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-robot-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Core ML</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">scikit-learn</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:78%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Supervised Learning</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Feature Engineering</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:70%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Model Evaluation</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:72%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Hyperparameter Tuning</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Deep Learning -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-brain-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Deep Learning</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">TensorFlow</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Keras</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Neural Networks</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:60%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">CNNs</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:55%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">NLP Basics</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:50%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- AI Deployment -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-cloud-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">AI Deployment</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">FastAPI</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">REST API Integration</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Model Serialisation</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:60%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Streamlit</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:55%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Docker (basics)</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:40%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── PANEL 3: Data Science ── -->
+                <div id="skill-panel-ds" class="skill-panel min-w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Data Analysis -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-line-chart-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Data Analysis</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Pandas</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:82%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">NumPy</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">EDA</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:78%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Data Cleaning</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">SQL Queries</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Visualisation -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-bar-chart-2-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Visualisation</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Matplotlib</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Seaborn</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Plotly</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:60%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Jupyter Notebook</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:85%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Power BI (basics)</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:45%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Statistics -->
+                        <div class="skills-card rounded-[16px] p-6 shadow-[0px_10px_30px_var(--currentShade)]">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-function-line text-xl text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold">Statistics</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Descriptive Stats</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:82%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Probability</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:75%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Hypothesis Testing</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:65%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Regression Analysis</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:70%"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm font-medium">Data Preprocessing</span>
+                                    <div class="w-20 skills-progress-bg rounded-full h-2">
+                                        <div class="skills-progress-bar h-2 rounded-full" style="width:80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /panels-row -->
+        </div><!-- /slider-track -->
+    </div><!-- /tabbed skills -->
+
+    <!-- Additional Skills -->
+    <div class="w-4/5 mt-12">
+        <h3 class="text-2xl font-bold text-center mb-8 skills-section-title">Additional Skills</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="additional-skill-card text-white rounded-[12px] p-4 text-center">
+                <i class="ri-brain-line text-2xl mb-2"></i>
+                <p class="font-medium">AI / ML</p>
+            </div>
+            <div class="additional-skill-card text-white rounded-[12px] p-4 text-center">
+                <i class="ri-palette-line text-2xl mb-2"></i>
+                <p class="font-medium">UI/UX Design &amp; Canva</p>
+            </div>
+            <div class="additional-skill-card text-white rounded-[12px] p-4 text-center">
+                <i class="ri-code-box-line text-2xl mb-2"></i>
+                <p class="font-medium">Data Structures &amp; Algorithms</p>
+            </div>
+            <div class="additional-skill-card text-white rounded-[12px] p-4 text-center">
+                <i class="ri-tools-line text-2xl mb-2"></i>
+                <p class="font-medium">Data Science</p>
+            </div>
+        </div>
+    </div>
+</section>

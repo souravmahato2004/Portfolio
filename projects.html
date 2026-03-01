@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Sourav Mahato</title>
+    <meta name="description"
+        content="Browse all projects built by Sourav Mahato — full stack web apps, tools, and experiments.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Apply saved theme immediately to prevent flash -->
+    <script>
+        (function () {
+            const t = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+
+    <!-- Override shared navbar: not sticky on this page -->
+    <style>
+        nav {
+            position: relative !important;
+            top: auto !important;
+        }
+    </style>
+</head>
+
+<body class="Outfit overflow-x-hidden">
+
+    <!-- Navbar (reused component) -->
+    <div data-component="components/navbar.html"></div>
+
+    <!-- Page header -->
+    <section class="flex flex-col items-center pt-16 pb-8 px-4">
+        <div class="bg-[var(--currentShade)] text-[var(--current)] w-fit px-8 py-2 rounded-full text-sm font-medium">
+            ALL PROJECTS
+        </div>
+        <h1 class="font-medium text-4xl mt-6 mb-3" style="color: var(--text-primary)">
+            Every Project I've Built
+        </h1>
+        <p class="text-sm max-w-lg text-center" style="color: var(--text-secondary)">
+            A complete collection of my work — from full-stack platforms to frontend experiments.
+        </p>
+    </section>
+
+    <!-- Filter bar (pills built dynamically by projects-main.js) -->
+    <div class="flex justify-center px-4 pb-10">
+        <div id="filter-bar" class="flex flex-wrap justify-center gap-3"></div>
+    </div>
+
+    <!-- Projects grid (populated by projects-main.js) -->
+    <section class="flex justify-center pb-20 px-4">
+        <div id="projects-all-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full max-w-7xl gap-8">
+        </div>
+    </section>
+
+    <!-- Back to portfolio -->
+    <div class="flex justify-center pb-20">
+        <a href="index.html#portfolio"
+            class="group flex items-center gap-3 border-2 border-[var(--current)] text-[var(--current)] px-8 py-3 rounded-full font-medium hover:bg-[var(--current)] hover:text-white transition-all duration-300">
+            <i class="ri-arrow-left-line text-lg transition-transform duration-300 group-hover:-translate-x-1"></i>
+            Back to Portfolio
+        </a>
+    </div>
+
+    <!-- Footer (reused component) -->
+    <div data-component="components/footer.html"></div>
+
+    <!-- Component loader — injects navbar & footer, then fires projects-main.js -->
+    <script>
+        (async function () {
+            const placeholders = document.querySelectorAll("[data-component]");
+            await Promise.all(Array.from(placeholders).map(async (el) => {
+                try {
+                    const res = await fetch(el.getAttribute("data-component"));
+                    if (res.ok) el.outerHTML = await res.text();
+                } catch (_) { }
+            }));
+            const s = document.createElement("script");
+            s.type = "module";
+            s.src = "js/projects-main.js";
+            document.body.appendChild(s);
+        })();
+    </script>
+
+</body>
+
+</html>

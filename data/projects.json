@@ -1,0 +1,282 @@
+[
+    {
+        "id": "internpulse",
+        "featured": true,
+        "title": "internPulse",
+        "description": "A full-stack internship platform bridging the gap between recruiters and candidates. Features real-time chat via WebSocket, role-based JWT authentication and a streamlined application pipeline for seamless hiring workflows.",
+        "image": "assets/portfolioImages/internpulse.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/UmaMerchant/InternPulse",
+        "tags": [
+            {
+                "label": "React",
+                "color": "theme"
+            },
+            {
+                "label": "FastAPI",
+                "color": "green"
+            },
+            {
+                "label": "PostgreSQL",
+                "color": "orange"
+            },
+            {
+                "label": "WebSocket",
+                "color": "blue"
+            },
+            {
+                "label": "JWT",
+                "color": "yellow"
+            },
+            {
+                "label": "bcrypt",
+                "color": "purple"
+            }
+        ],
+        "period": "Dec 2025 - Present",
+        "type": "Full Stack",
+        "accentColor": "amber"
+    },
+    {
+        "id": "ngo-cms",
+        "featured": true,
+        "title": "NGO CMS",
+        "description": "Built a full-stack CMS for an NGO featuring a separate admin panel to dynamically manage content, publish announcements, and coordinate volunteers — secured with JWT authentication and role-based access control.",
+        "image": "assets/portfolioImages/ngo-cms.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/souravmahato2004/NGO",
+        "tags": [
+            {
+                "label": "React",
+                "color": "theme"
+            },
+            {
+                "label": "Node",
+                "color": "green"
+            },
+            {
+                "label": "Express",
+                "color": "yellow"
+            },
+            {
+                "label": "MongoDB",
+                "color": "orange"
+            },
+            {
+                "label": "JWT",
+                "color": "yellow"
+            },
+            {
+                "label": "bcrypt",
+                "color": "purple"
+            }
+        ],
+        "period": "Apr 2025 - Jul 2025",
+        "type": "Full Stack",
+        "accentColor": "green"
+    },
+    {
+        "id": "attendease",
+        "featured": true,
+        "title": "AttendEase",
+        "description": "Built Attendance Management System featuring a role-based structure with student view-only access, teacher edit privileges, and an admin module for managing teacher accounts and streamlining role assignments.",
+        "image": "assets/portfolioImages/attendease.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/souravmahato2004/Attendance-Management-System",
+        "tags": [
+            {
+                "label": "React",
+                "color": "theme"
+            },
+            {
+                "label": "Tailwind",
+                "color": "blue"
+            },
+            {
+                "label": "PostgreSQL",
+                "color": "orange"
+            },
+            {
+                "label": "Node",
+                "color": "purple"
+            },
+            {
+                "label": "Express",
+                "color": "yellow"
+            }
+        ],
+        "period": "Aug 2025 - Nov 2025",
+        "type": "Full Stack",
+        "accentColor": "theme"
+    },
+    {
+        "id": "quizera",
+        "featured": false,
+        "title": "QuizEra",
+        "description": "Developed an interactive quiz platform that allows seamless participation through host-generated codes and features a versatile quiz builder supporting multiple question types, providing users with a flexible and engaging experience.",
+        "image": "assets/portfolioImages/quizera.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/souravmahato2004/QuizEra",
+        "tags": [
+            {
+                "label": "PHP",
+                "color": "blue"
+            },
+            {
+                "label": "MySQL",
+                "color": "orange"
+            },
+            {
+                "label": "JavaScript",
+                "color": "green"
+            },
+            {
+                "label": "Tailwind",
+                "color": "yellow"
+            },
+            {
+                "label": "PHP Mailer",
+                "color": "theme"
+            }
+        ],
+        "period": "Feb 2025 - Jul 2025",
+        "type": "Full Stack",
+        "accentColor": "blue"
+    },
+    {
+        "id": "portfolio",
+        "featured": false,
+        "title": "Portfolio Website",
+        "description": "Developed a fully responsive portfolio website to showcase creative projects and professional experience, leveraging modern web technologies for a sleek design and optimizing performance to ensure fast loading and smooth user experience.",
+        "image": "assets/portfolioImages/portfolio.png",
+        "liveUrl": "https://souravmahato.vercel.app/",
+        "githubUrl": "https://github.com/souravmahato2004/Portfolio",
+        "tags": [
+            {
+                "label": "HTML5",
+                "color": "orange"
+            },
+            {
+                "label": "CSS3",
+                "color": "blue"
+            },
+            {
+                "label": "Tailwind",
+                "color": "purple"
+            },
+            {
+                "label": "JavaScript",
+                "color": "yellow"
+            },
+            {
+                "label": "Vercel",
+                "color": "theme"
+            }
+        ],
+        "period": "Apr 2025",
+        "type": "Frontend",
+        "accentColor": "pink"
+    },
+    {
+        "id": "inotes",
+        "featured": false,
+        "title": "iNotes",
+        "description": "Developed a Note-Taking Website providing users with a seamless platform to create, edit, and organize their notes. Implemented a responsive interface, along with efficient backend handling for data storage and retrieval, ensuring a reliable user experience.",
+        "image": "assets/portfolioImages/inotes.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/souravmahato2004/inotes",
+        "tags": [
+            {
+                "label": "React",
+                "color": "blue"
+            },
+            {
+                "label": "MongoDB",
+                "color": "orange"
+            },
+            {
+                "label": "Node",
+                "color": "green"
+            },
+            {
+                "label": "Express",
+                "color": "yellow"
+            },
+            {
+                "label": "Tailwind",
+                "color": "theme"
+            }
+        ],
+        "period": "Feb 2025 - Jul 2025",
+        "type": "Full Stack",
+        "accentColor": "blue"
+    },
+    {
+        "id": "weather",
+        "featured": false,
+        "title": "Weather Website",
+        "description": "Created a Weather Website that fetches real-time weather information from an API, allowing users to view current weather conditions for any city in a clean and responsive interface.",
+        "image": "assets/portfolioImages/weather.png",
+        "liveUrl": "https://souravmahato2004.github.io/Weather-Application",
+        "githubUrl": "https://github.com/souravmahato2004/Weather-Application",
+        "tags": [
+            {
+                "label": "HTML5",
+                "color": "green"
+            },
+            {
+                "label": "CSS3",
+                "color": "purple"
+            },
+            {
+                "label": "Tailwind",
+                "color": "yellow"
+            },
+            {
+                "label": "JavaScript",
+                "color": "blue"
+            },
+            {
+                "label": "Open Weather API",
+                "color": "orange"
+            }
+        ],
+        "period": "Nov 2024",
+        "type": "Frontend",
+        "accentColor": "green"
+    },
+    {
+        "id": "titanic-survival",
+        "featured": false,
+        "title": "Titanic Survival",
+        "description": "A data science project predicting Titanic passenger survival using the Kaggle dataset. Involves exploratory data analysis, feature engineering, and building ML classification models submitted to Kaggle's Machine Learning from Disaster competition.",
+        "image": "assets/portfolioImages/titanic.png",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/souravmahato2004/Titanic-Survival",
+        "tags": [
+            {
+                "label": "Python",
+                "color": "blue"
+            },
+            {
+                "label": "Pandas",
+                "color": "purple"
+            },
+            {
+                "label": "Scikit-learn",
+                "color": "orange"
+            },
+            {
+                "label": "Matplotlib",
+                "color": "green"
+            },
+            {
+                "label": "Kaggle",
+                "color": "theme"
+            }
+        ],
+        "period": "Aug 2025 - Dec 2025",
+        "type": "Data Science",
+        "accentColor": "blue"
+    }
+]

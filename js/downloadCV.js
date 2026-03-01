@@ -3,40 +3,63 @@
 // ============================================================
 
 export function initDownloadCV() {
-    setupDropdown("cv-dropdown-btn", "cv-dropdown-menu", "cv-arrow-icon");
-    setupDropdown("cv-dropdown-btn-mobile", "cv-dropdown-menu-mobile", "cv-arrow-icon-mobile");
+    // ── Desktop dropdown ─────────────────────────────────────
+    const desktopBtn = document.getElementById("cv-dropdown-btn");
+    const desktopMenu = document.getElementById("cv-dropdown-menu");
+    const desktopArrow = desktopBtn?.querySelector(".cv-arrow-icon");
+
+    if (desktopBtn && desktopMenu) {
+        desktopBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const isOpen = !desktopMenu.classList.contains("hidden");
+            desktopMenu.classList.toggle("hidden", isOpen);
+            if (desktopArrow) desktopArrow.style.transform = isOpen ? "" : "rotate(180deg)";
+        });
+
+        desktopMenu.querySelectorAll(".cv-option").forEach((opt) => {
+            opt.addEventListener("click", () => {
+                desktopMenu.classList.add("hidden");
+                if (desktopArrow) desktopArrow.style.transform = "";
+            });
+        });
+
+        // Close desktop dropdown on outside click
+        document.addEventListener("pointerdown", (e) => {
+            if (!e.target.closest("#cv-dropdown-wrapper")) {
+                desktopMenu.classList.add("hidden");
+                if (desktopArrow) desktopArrow.style.transform = "";
+            }
+        });
+    }
+
+    // ── Mobile accordion ─────────────────────────────────────
+    const mobileBtn = document.getElementById("cv-dropdown-btn-mobile");
+    const mobileMenu = document.getElementById("cv-dropdown-menu-mobile");
+    const mobileArrow = mobileBtn?.querySelector(".cv-arrow-icon-mobile");
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+            const isOpen = !mobileMenu.classList.contains("hidden");
+            mobileMenu.classList.toggle("hidden", isOpen);
+            if (mobileArrow) mobileArrow.style.transform = isOpen ? "" : "rotate(180deg)";
+        });
+
+        // Close accordion when a CV option is tapped
+        mobileMenu.querySelectorAll(".cv-option").forEach((opt) => {
+            opt.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                if (mobileArrow) mobileArrow.style.transform = "";
+            });
+        });
+    }
+
+    // Reset mobile accordion whenever the mobile menu is closed
+    const menuClose = document.getElementById("menu-close");
+    const menuOverlay = document.getElementById("menu-overlay");
+    const resetMobileAccordion = () => {
+        if (mobileMenu) mobileMenu.classList.add("hidden");
+        if (mobileArrow) mobileArrow.style.transform = "";
+    };
+    if (menuClose) menuClose.addEventListener("click", resetMobileAccordion);
+    if (menuOverlay) menuOverlay.addEventListener("click", resetMobileAccordion);
 }
-
-function setupDropdown(btnId, menuId, arrowClass) {
-    const btn = document.getElementById(btnId);
-    const menu = document.getElementById(menuId);
-    if (!btn || !menu) return;
-
-    const arrowIcon = btn.querySelector(`.${arrowClass}`);
-
-    // Toggle on button click
-    btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const isOpen = !menu.classList.contains("hidden");
-        closeAllDropdowns();
-        if (!isOpen) {
-            menu.classList.remove("hidden");
-            if (arrowIcon) arrowIcon.style.transform = "rotate(180deg)";
-        }
-    });
-
-    // Close when clicking a CV option (download starts automatically via <a>)
-    menu.querySelectorAll(".cv-option").forEach((opt) => {
-        opt.addEventListener("click", () => closeAllDropdowns());
-    });
-}
-
-function closeAllDropdowns() {
-    document.querySelectorAll(".cv-dropdown-menu").forEach((m) => m.classList.add("hidden"));
-    document.querySelectorAll(".cv-arrow-icon, .cv-arrow-icon-mobile").forEach((i) => {
-        i.style.transform = "";
-    });
-}
-
-// Close on outside click
-document.addEventListener("click", () => closeAllDropdowns());

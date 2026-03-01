@@ -58,7 +58,7 @@
 
 <!-- ===== MOBILE MENU ===== -->
 <div id="mobile-menu"
-    class="fixed top-0 right-0 h-full w-full max-w-xs bg-[#181818] z-[60] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+    class="fixed top-0 right-0 h-full w-full max-w-xs bg-[#181818] z-[60] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden overflow-visible">
     <div class="flex justify-end p-4">
         <button id="menu-close" class="text-white text-3xl">
             <i class="ri-close-line"></i>
@@ -73,29 +73,29 @@
         <button class="nav-link text-2xl text-white" data-section="experience">Experience</button>
         <button class="nav-link text-2xl text-white" data-section="education">Education</button>
         <button class="nav-link text-2xl text-white" data-section="contact">Contact</button>
-        <!-- CV Dropdown (mobile) -->
-        <div class="relative mt-8" id="cv-dropdown-wrapper-mobile">
+        <!-- CV Accordion (mobile) -->
+        <div class="w-full px-6 mt-4" id="cv-dropdown-wrapper-mobile">
             <button id="cv-dropdown-btn-mobile"
-                class="bg-[var(--current)] px-8 py-3 rounded-full text-white flex items-center gap-2">
+                class="bg-[var(--current)] w-full px-8 py-3 rounded-full text-white flex items-center justify-center gap-2">
                 <i class="ri-file-download-line"></i> Download CV
                 <i class="ri-arrow-down-s-line cv-arrow-icon-mobile transition-transform duration-200"></i>
             </button>
-            <div id="cv-dropdown-menu-mobile"
-                class="cv-dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white rounded-[14px] shadow-xl overflow-hidden z-50 hidden w-48">
+            <!-- Inline accordion — no absolute positioning, never clipped -->
+            <div id="cv-dropdown-menu-mobile" class="hidden mt-3 rounded-[14px] overflow-hidden bg-white shadow-lg">
                 <a href="assets/resume/Sourav_Mahato_WebDev_CV.pdf" download="Sourav_Mahato_WebDev_CV.pdf"
                     class="cv-option flex items-center gap-3 px-5 py-3 hover:bg-[var(--currentShade)] transition-colors">
                     <i class="ri-code-s-slash-line text-[var(--current)] text-lg"></i>
-                    <span class="text-sm font-medium">Web Dev CV</span>
+                    <span class="text-sm font-medium text-gray-800">Web Dev CV</span>
                 </a>
                 <a href="assets/resume/Sourav_Mahato_AIML_CV.pdf" download="Sourav_Mahato_AIML_CV.pdf"
                     class="cv-option flex items-center gap-3 px-5 py-3 hover:bg-[var(--currentShade)] transition-colors">
                     <i class="ri-brain-line text-[var(--current)] text-lg"></i>
-                    <span class="text-sm font-medium">AI / ML CV</span>
+                    <span class="text-sm font-medium text-gray-800">AI / ML CV</span>
                 </a>
                 <a href="assets/resume/Sourav_Mahato_DataScience_CV.pdf" download="Sourav_Mahato_DataScience_CV.pdf"
                     class="cv-option flex items-center gap-3 px-5 py-3 hover:bg-[var(--currentShade)] transition-colors">
                     <i class="ri-bar-chart-line text-[var(--current)] text-lg"></i>
-                    <span class="text-sm font-medium">Data Science CV</span>
+                    <span class="text-sm font-medium text-gray-800">Data Science CV</span>
                 </a>
             </div>
         </div>

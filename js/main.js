@@ -16,6 +16,7 @@ import { initScrollAnimations } from "./scrollAnimations.js";
 import { initServiceModal, refreshModalIfOpen } from "./serviceModal.js";
 import { initDownloadCV } from "./downloadCV.js";
 import { initSkillTabs } from "./skillTabs.js";
+import { renderProjects } from "./projectRenderer.js";
 
 // Wire theme changes → modal refresh
 registerThemeChangeCallback(refreshModalIfOpen);
@@ -32,6 +33,21 @@ initServiceModal();
 initDownloadCV();
 initSkillTabs();
 
+// Render featured projects on the homepage
+const portfolioGrid = document.getElementById("portfolio-grid");
+if (portfolioGrid) renderProjects(portfolioGrid, true);
+
 // Dynamic copyright year
 const yearEl = document.getElementById("current-year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Scroll to hash section if navigated from another page (e.g. projects.html)
+// Components are injected async, so the element exists now that main.js runs.
+const hash = window.location.hash?.slice(1);
+if (hash) {
+    const target = document.getElementById(hash);
+    if (target) {
+        // Small delay ensures layout is fully painted before scrolling
+        setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+    }
+}

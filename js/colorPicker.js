@@ -2,7 +2,35 @@
 // js/colorPicker.js  —  Theme-color switcher panel
 // ============================================================
 
+const SHADE_MAP = {
+    "#754ef9": "#f0edfe",
+    "#FCCA07": "#fffbec",
+    "#FF6D38": "#fff0eb",
+    "#004B6A": "#e5f7ff",
+    "#E94D88": "#ffe8f1",
+    "#45B164": "#e7ffee",
+};
+
+/** Apply a color (and its shade) to the document root and save to localStorage. */
+export function applyAccentColor(hex) {
+    if (!hex) return;
+    document.documentElement.style.setProperty("--current", hex);
+    if (SHADE_MAP[hex]) {
+        document.documentElement.style.setProperty("--currentShade", SHADE_MAP[hex]);
+    }
+    localStorage.setItem("accentColor", hex);
+}
+
+/** Restore saved accent color — call this as early as possible on every page. */
+export function restoreAccentColor() {
+    const saved = localStorage.getItem("accentColor");
+    if (saved) applyAccentColor(saved);
+}
+
 export function initColorPicker() {
+    // Restore saved color whenever this page loads
+    restoreAccentColor();
+
     const toggleColor = document.getElementById("toggleColor");
     const colorPanel = document.getElementById("colorPanel");
 
@@ -39,25 +67,11 @@ export function initColorPicker() {
         }
     });
 
-    // Apply selected color to CSS custom properties
+    // Apply selected color
     colorPanel.addEventListener("click", (e) => {
         const value = getComputedStyle(document.documentElement)
             .getPropertyValue(e.target.textContent)
             .trim();
-
-        document.documentElement.style.setProperty("--current", value);
-
-        const shadeMap = {
-            "#754ef9": "#f0edfe",
-            "#FCCA07": "#fffbec",
-            "#FF6D38": "#fff0eb",
-            "#004B6A": "#e5f7ff",
-            "#E94D88": "#ffe8f1",
-            "#45B164": "#e7ffee",
-        };
-
-        if (shadeMap[value]) {
-            document.documentElement.style.setProperty("--currentShade", shadeMap[value]);
-        }
+        if (value) applyAccentColor(value);
     });
 }

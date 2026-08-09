@@ -9,7 +9,7 @@ export function initSkillTabs() {
     if (!tabs.length || !row) return;
 
     // Build a map: panel-id → index position in the row
-    const panelOrder = ["skill-panel-webdev", "skill-panel-aiml", "skill-panel-ds"];
+    const panelOrder = ["skill-panel-webdev", "skill-panel-aiml"];
 
     function activateTab(clickedTab) {
         const targetPanelId = clickedTab.getAttribute("data-panel");
@@ -28,7 +28,7 @@ export function initSkillTabs() {
         tab.addEventListener("click", () => activateTab(tab));
     });
 
-    // Default: show Web Dev (index 0)
+    // Default: show Full Stack (index 0)
     const defaultTab = document.getElementById("skill-tab-webdev");
     if (defaultTab) activateTab(defaultTab);
 }

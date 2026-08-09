@@ -4,12 +4,12 @@
 
 // --------------- Service Data ---------------
 const serviceData = {
-  "web-development": {
-    title: "Web Development",
+  "full-stack": {
+    title: "Full Stack Engineer",
     icon: "ri-code-s-slash-line",
     details: `
-      <h3 class="text-2xl font-bold mb-4 modal-title">Web Development Services</h3>
-      <p class="modal-text mb-6">I specialize in creating modern, responsive, and high-performance websites and web applications that deliver exceptional user experiences across all devices.</p>
+      <h3 class="text-2xl font-bold mb-4 modal-title">Full Stack Development Services</h3>
+      <p class="modal-text mb-6">I build modern, responsive, and high-performance web applications end to end — from the interface down to the API, database, and deployment.</p>
       
       <div class="mb-6">
         <h4 class="text-lg font-semibold mb-3 modal-title">Technologies I Work With:</h4>
@@ -94,53 +94,6 @@ const serviceData = {
       </div>
     `,
   },
-  "data-science": {
-    title: "Data Science",
-    icon: "ri-bar-chart-line",
-    details: `
-      <h3 class="text-2xl font-bold mb-4 modal-title">Data Science</h3>
-      <p class="modal-text mb-6">As a beginner in data science, I work on projects involving data cleaning, visualization, and basic predictive modeling.</p>
-      
-      <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Approach to Learning &amp; Projects:</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="modal-card-bg p-4 rounded-lg">
-            <h5 class="font-semibold mb-2 modal-title">Data Analysis</h5>
-            <p class="text-sm modal-text">Exploring and visualizing datasets to identify trends, patterns, and insights using Python libraries like Pandas and Matplotlib.</p>
-          </div>
-          <div class="modal-card-bg p-4 rounded-lg">
-            <h5 class="font-semibold mb-2 modal-title">Machine Learning</h5>
-            <p class="text-sm modal-text">Building simple predictive models using scikit-learn and experimenting with basic algorithms like regression and classification.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Key Skills I'm Developing:</h4>
-        <div class="flex flex-wrap gap-3">
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Data Cleaning &amp; Preprocessing</span>
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Data Visualization</span>
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Exploratory Data Analysis (EDA)</span>
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Basic Machine Learning Models</span>
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Python Programming</span>
-          <span class="flex items-center gap-2 bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm"><i class="ri-check-line"></i> Data-driven Problem Solving</span>
-        </div>
-      </div>
-      
-      <div class="mb-6">
-        <h4 class="text-lg font-semibold mb-3 modal-title">Technologies &amp; Tools:</h4>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Python</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Pandas</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">NumPy</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Matplotlib</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Seaborn</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">scikit-learn</span>
-          <span class="bg-[var(--currentShade)] text-[var(--current)] px-3 py-1 rounded-full text-sm">Jupyter Notebook</span>
-        </div>
-      </div>
-    `,
-  },
 };
 
 // --------------- Modal Logic ---------------
@@ -218,9 +171,8 @@ export function refreshModalIfOpen() {
   const titleText = modalTitle.textContent.trim();
   let currentServiceType = null;
 
-  if (titleText.includes("Web Development")) currentServiceType = "web-development";
+  if (titleText.includes("Full Stack")) currentServiceType = "full-stack";
   else if (titleText.includes("AI / ML")) currentServiceType = "ai-ml";
-  else if (titleText.includes("Data Science")) currentServiceType = "data-science";
 
   if (currentServiceType) openModal(currentServiceType);
 }

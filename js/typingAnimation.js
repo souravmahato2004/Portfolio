@@ -3,7 +3,7 @@
 // ============================================================
 
 export function initTypingAnimation() {
-    const phrases = ["Sourav", "Web Developer", "AI/ML Engineer","Data Scientist"];
+    const phrases = ["Sourav", "Full Stack Engineer", "AI/ML Engineer"];
     const typingElement = document.getElementById("typing-text");
 
     if (!typingElement) return;

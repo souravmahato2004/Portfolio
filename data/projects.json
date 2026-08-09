@@ -249,7 +249,7 @@
         "id": "titanic-survival",
         "featured": false,
         "title": "Titanic Survival",
-        "description": "A data science project predicting Titanic passenger survival using the Kaggle dataset. Involves exploratory data analysis, feature engineering, and building ML classification models submitted to Kaggle's Machine Learning from Disaster competition.",
+        "description": "A machine learning project predicting Titanic passenger survival using the Kaggle dataset. Involves feature engineering and building ML classification models submitted to Kaggle's Machine Learning from Disaster competition.",
         "image": "assets/portfolioImages/titanic.png",
         "liveUrl": "",
         "githubUrl": "https://github.com/souravmahato2004/Titanic-Survival",
@@ -276,7 +276,7 @@
             }
         ],
         "period": "Aug 2025 - Dec 2025",
-        "type": "Data Science",
+        "type": "AI/ML",
         "accentColor": "blue"
     }
 ]

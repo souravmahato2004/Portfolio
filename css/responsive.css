@@ -15,6 +15,53 @@
     }
 }
 
+/* ---- Below Tailwind's lg: breakpoint (≤1023px) ----
+   The hero drops to a single column at lg (1024px), but the About
+   section's side-by-side layout used to keep going until 768px. In that
+   769–1023px band the text column was squeezed to ~300px while the
+   absolutely-positioned photo (h-114 w-114 = 456px) escaped its column
+   and covered it. Stack About at the same breakpoint the hero uses. */
+@media (max-width: 1023px) {
+
+    .w-3\/5,
+    .w-4\/5,
+    .w-1\/3 {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ml-20 {
+        margin-left: 0;
+    }
+
+    .pl-12 {
+        padding-left: 1rem;
+    }
+
+    #about .flex.justify-center {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4rem;
+        gap: 2rem;
+    }
+
+    /* Take the photo out of absolute flow so it sits in the column
+       instead of overlapping the text. */
+    #about img {
+        position: relative;
+        object-position: 0px 0px;
+        width: 300px;
+        height: 300px;
+        border-radius: 16px;
+    }
+
+    #about .w-1\/3.ml-20 {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /* ---- Mobile (≤768px) ---- */
 @media (max-width: 768px) {
     body.menu-open {
@@ -35,21 +82,7 @@
         grid-template-columns: 1fr;
     }
 
-    .w-3\/5,
-    .w-4\/5,
-    .w-1\/3 {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .ml-20 {
-        margin-left: 0;
-    }
-
-    .pl-12 {
-        padding-left: 1rem;
-    }
+    /* width / margin resets for these live in the ≤1023px block above */
 
     .text-4xl,
     .text-\[54px\] {
@@ -89,32 +122,8 @@
         pointer-events: auto;
     }
 
-    /* Triangle sizes */
-    .tri {
-        height: 350px;
-        left: 0;
-        top: 35px;
-    }
-
-    .triBack {
-        height: 300px;
-    }
-
-    /* About section stacking */
-    #about .flex.justify-center {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 4rem;
-        gap: 2rem;
-    }
-
-    #about img {
-        position: relative;
-        object-position: 0px 0px;
-        width: 300px;
-        height: 300px;
-        border-radius: 16px;
-    }
+    /* Triangle sizes are now proportional to their wrapper
+       (see hero-shapes.css) and need no per-breakpoint overrides. */
 
     /* Modal responsive */
     #serviceModal .bg-white {
@@ -145,32 +154,8 @@
         padding-right: 1.5rem;
     }
 
-    .tri {
-        height: 280px;
-        top: 25px;
-    }
-
-    .triBack {
-        height: 240px;
-    }
-
     #serviceModal .bg-white {
         max-width: 98vw;
         margin: 0.5rem auto;
-    }
-}
-
-/* ---- Extra-narrow (≤400px) ---- */
-@media (max-width: 400px) {
-    .tri {
-        height: 240px;
-        --r: 40px;
-        top: 20px;
-        left: 10px;
-    }
-
-    .triBack {
-        height: 210px;
-        --r: 20px;
     }
 }

@@ -28,6 +28,11 @@
 .service-title {
     color: var(--text-primary);
     transition: color 0.3s ease;
+    /* Keep every title on one line — a wrapped title pushes the divider,
+       description and button down and breaks alignment between cards.
+       "Full Stack Engineer" measures ~202px at text-2xl, which still fits
+       the ~240px card content width at a 320px viewport. */
+    white-space: nowrap;
 }
 
 .service-divider div {

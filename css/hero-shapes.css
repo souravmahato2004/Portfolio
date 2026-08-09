@@ -4,14 +4,31 @@
    and particles canvas positioning
    ============================================================ */
 
-/* ---- Triangular profile image ---- */
-.tri {
-    position: relative;
-    top: 70px;
-    left: 30px;
-    --r: 60px;
+/* The hero image wrapper is a square that shrinks with the viewport
+   (max-w-280 → max-w-450). Making it a container lets every dimension
+   below be a fraction of its width, so the whole composition scales as
+   one piece instead of drifting apart at small sizes. */
+.tri-stack {
+    container-type: inline-size;
 
-    height: 500px;
+    /* The photo triangle sits at top:15.6cqw and is 111.1cqw tall, so the
+       composition occupies 126.7cqw of height — more than the square the
+       utility class asks for. Reserving that height here keeps the shape
+       from hanging past its own box and landing on the heading when the
+       layout stacks below lg. Overrides Tailwind's aspect-square. */
+    aspect-ratio: 1 / 1.267;
+}
+
+/* ---- Triangular profile image ----
+   All values are cqw (% of wrapper width). At the 450px desktop wrapper
+   these resolve to the original 500/70/30/60px, so desktop is unchanged. */
+.tri {
+    position: absolute;
+    top: 15.6cqw;
+    left: 6.7cqw;
+    --r: 13.3cqw;
+
+    height: 111.1cqw;
     aspect-ratio: 0.866;
     --_g: calc(tan(60deg) * var(--r)) left var(--r), #000 98%, #0000 101%;
     mask:
@@ -27,15 +44,20 @@
     clip-path: polygon(100% 50%, 0 100%, 0 0);
     background: black;
     object-fit: cover;
-    object-position: -100px 40px;
+    /* Was -100px 40px — fixed pixels meant that at a 280px wrapper the
+       crop ate half the photo and cut the face off. As cqw it holds the
+       same framing at every size. */
+    object-position: -22.2cqw 8.9cqw;
 }
 
 /* ---- Triangular accent background ---- */
 .triBack {
     position: absolute;
-    --r: 30px;
+    top: 0;
+    left: 0;
+    --r: 6.7cqw;
 
-    height: 430px;
+    height: 95.6cqw;
     aspect-ratio: 0.866;
     --_g: calc(tan(60deg) * var(--r)) left var(--r), #000 98%, #0000 101%;
     mask:

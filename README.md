@@ -39,8 +39,7 @@ portfolio/
 │   │   └── mypic.jpg
 │   └── resume/             # CV PDFs — replace with your actual files
 │       ├── Sourav_Mahato_WebDev_CV.pdf
-│       ├── Sourav_Mahato_AIML_CV.pdf
-│       └── Sourav_Mahato_DataScience_CV.pdf
+│       └── Sourav_Mahato_AIML_CV.pdf
 │
 ├── components/             # HTML section partials
 │   ├── navbar.html
@@ -107,8 +106,8 @@ portfolio/
 - **Modular architecture** — each section is a separate HTML partial
 - **Theme switcher** — light / dark mode with localStorage persistence  
 - **Accent color picker** — 6 color options applied via CSS variables
-- **Tabbed skills section** — Web Dev / AI·ML / Data Science panels
-- **CV selector dropdown** — choose which resume to download (Web Dev, AI/ML, Data Science)
+- **Tabbed skills section** — Full Stack / AI·ML panels
+- **CV selector dropdown** — choose which resume to download (Full Stack, AI/ML)
 - **Typing animation** — rotating role titles in the hero section
 - **Service modals** — detailed service info in an accessible overlay
 - **Smooth scroll navigation** — all nav links & CTA buttons
